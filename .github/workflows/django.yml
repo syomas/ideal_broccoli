@@ -20,6 +20,9 @@ jobs:
         echo "hi message 1"
         echo "hi message 2"
         echo "ver: ${{ env.APP_NAME }}"
+   
+    - name: git clone
+      uses: actions/checkout@v1
     - name: list current foler
       run: ls -la
     
@@ -33,6 +36,9 @@ jobs:
       run : echo "hello from deploy job"
     - name: deploy pack
       run: echo "deploy package name is ${{ env.PACKAGE_NAME }}"
+      
+    - name: test smth
+      run: aws --version
       
 
 
