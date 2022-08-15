@@ -18,6 +18,8 @@ jobs:
   my_deploy:
   
     runs-on: ubuntu-latest
+    needs: [my_test]
+    
     steps:
     - name: print another hello
       run : echo "hello from deploy job"
