@@ -20,9 +20,12 @@ jobs:
         echo "hi message 1"
         echo "hi message 2"
         echo "ver: ${{ env.APP_NAME }}"
+    - name: list current foler
+      run: ls -la
     
   my_deploy:
     runs-on: ubuntu-latest
+    needs: [my_test]
  
     
     steps:
